@@ -1,0 +1,22 @@
+html{
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 16px;
+}
+.topnav{
+    background-color: #333;
+    overflow: hidden;
+    text-align: end;
+    padding: 20px;
+    border-radius: 10px;
+}
+.topnav a{
+    color: white;
+    text-decoration: none;
+    padding: 10px 10px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+.topnav a:hover{
+    background-color: #616161;
+    transition: all 0.3s ease;
+}

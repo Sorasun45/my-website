@@ -1,21 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home Page</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <div class="topnav">
         <a class="active" href="./index.html">Home</a>
         <a href="./about.html">About</a>
         <a href="./contact.html">Contact</a>
     </div>
-    <div class = "content">
-        <h1>Welcome to my website</h1>
-        <p>This is a sample website created using HTML, CSS, and JavaScript.</p>
-        <p>You can learn more about me and my work by clicking on the "About" link in the top navigation bar.</p>
+    <div class="content">
+        <h1>Control ESP32 LED</h1>
+        <button onclick="controlLED('on')">Turn ON LED</button>
+        <button onclick="controlLED('off')">Turn OFF LED</button>
+
+        <script>
+            async function controlLED(state) {
+                const esp32IP = "http://192.168.76.62"; // แทนด้วย IP ของ ESP32
+                try {
+                    const response = await fetch(`${esp32IP}/led?state=${state}`);
+                    const result = await response.text();
+                    alert(result);
+                } catch (error) {
+                    alert("Failed to connect to ESP32");
+                }
+            }
+        </script>
     </div>
 </body>
+
 </html>
